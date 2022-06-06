@@ -12,4 +12,23 @@ public class Account {
 	public long getId() {
 		return this.id;
 	}
+	
+	@Override
+	public boolean equals(Object o) {
+		if(o == null) {
+			return false;
+		}
+		
+		if(this == o) {
+			return true;
+		}
+		
+		if(!(o instanceof Account)) {
+			return false;
+		}
+		
+		Account other = (Account) o;
+		
+		return this.id == other.id && this.name.equals(other.name);
+	}
 }

@@ -4,23 +4,22 @@ import java.util.HashMap;
 
 public class Document {
 	private final String text;
-	private final boolean[] authority = new boolean[100];
-	private final HashMap<Account, Integer> hashMap = new HashMap<>();
+	private final HashMap<Account, Boolean> authority = new HashMap<>();
 	
 	public Document(String text, Account originalWriter) {
 		this.text = text;
-		this.authority[(int)originalWriter.getId()] = true;
+		authority.put(originalWriter, true);
 	}
 	
 	public void read(Account account) {
-		if(this.authority[(int)account.getId()] == false) {
+		if(this.authority.get(account) == false) {
 			return;
 		}
 		System.out.println(this);
 	}
 	
 	public void share(Account account) {
-		this.authority[(int)account.getId()] = true;
+		authority.put(account, true);;
 	}
 	
 	@Override

@@ -70,5 +70,6 @@ public class Main {
 		System.out.println(fruitBox);
 		System.out.println(appleBox);
 		System.out.println(toyBox);
+	}
 	
 }
