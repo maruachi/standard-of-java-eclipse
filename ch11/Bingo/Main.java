@@ -1,13 +1,13 @@
 package Bingo;
 
-import java.util.HashSet;
 import java.util.Iterator;
+import java.util.LinkedHashSet;
 import java.util.Set;
 
 public class Main {
 	public static void main(String[] args) {
-		Set set = new HashSet();
-//		Set set = new LinkedHashSet();
+//		Set set = new HashSet();
+		Set set = new LinkedHashSet();
 		int[][] board = new int[5][5];
 		
 		for(int i = 0; set.size() < 25; i++) {
