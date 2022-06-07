@@ -19,7 +19,7 @@ public class Main {
 		for(int i = 0; i < board.length; i++) {
 			for(int j = 0; j < board[i].length; j++) {
 				board[i][j] = Integer.parseInt((String)it.next());
-				System.out.print((board[i][j] < 10 ? " " : " ") + board[i][j]);
+				System.out.print((board[i][j] < 10 ? "  " : " ") + board[i][j]);
 			}
 			System.out.println();
 		}
