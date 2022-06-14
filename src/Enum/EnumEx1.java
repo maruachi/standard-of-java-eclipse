@@ -1,4 +1,4 @@
-package EnumEx1;
+package Enum;
 
 enum Direction {
 	EAST(1), SOUTH(5), WEST(-1), NORTH(10);
@@ -14,7 +14,7 @@ enum Direction {
 	}
 }
 
-public class Main {
+public class EnumEx1 {
 	public static void main(String[] args) {
 		Direction d1 = Direction.EAST;
 		Direction d2 = Direction.valueOf("WEST");
