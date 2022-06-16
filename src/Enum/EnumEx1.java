@@ -1,5 +1,4 @@
 package Enum;
-
 enum Direction {
 	EAST(1), SOUTH(5), WEST(-1), NORTH(10);
 	

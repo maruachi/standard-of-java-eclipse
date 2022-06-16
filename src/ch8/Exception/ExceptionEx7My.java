@@ -16,7 +16,7 @@ public class ExceptionEx7My {
 //			}
 			System.out.println("ArithmeticExeption");
 		}
-		catch(ArithmeticException e) {
+		catch(ArithmeticException e) { //전체 예외 처리가 먼저 나오는 경우 세부예외처리를 뒤에 놓을 수 없다.
 			System.out.println("Exception");
 		}
 		System.out.println(6);
