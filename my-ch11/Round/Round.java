@@ -1,21 +1,24 @@
 package Round;
 
 import java.text.MessageFormat;
+import java.util.Objects;
 
 import Task.Tag;
 
 public class Round {
 	private final String name;
 	private final int order;
+	private final static int MAX_ROUND = 10;
+	private final static int MAX_NAME_LENTGH = 10;
 	
 	public Round(String name, int order) {
 		if(name == null) {
 			throw new RuntimeException();
 		}
-		if(name.length() > 10) {
+		if(name.length() > MAX_NAME_LENTGH) {
 			throw new RuntimeException();
 		}
-		if(order < 1 || order > 10) {
+		if(order < 0 || order > MAX_ROUND) {
 			throw new RuntimeException();
 		}
 		
@@ -29,18 +32,18 @@ public class Round {
 	}
 	
 	public static Round endRound() {
-		return new Round("End", -1);
+		return new Round("End", 0);
 	}
 	
 	public boolean isEnd() {
-		if(this.order == 0) {
+		if(Objects.equals(this, Round.endRound())) {
 			return true;
 		}
 		return false;
 	}
 	
 	public boolean isNotStart() {
-		if(this.order == -1) {
+		if(Objects.equals(this, Round.previousRound())) {
 			return true;
 		}
 		return false;

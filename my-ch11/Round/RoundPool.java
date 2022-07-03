@@ -20,7 +20,8 @@ public class RoundPool {
 		
 		this.rounds = rounds;
 		this.iterRound = rounds.iterator();
-		this.currentRound = iterRound.next(); 
+		this.currentRound = iterRound.next();
+		
 	}
 	
 	public static RoundPool createRounds(String[] names) {
@@ -37,13 +38,21 @@ public class RoundPool {
 	}
 	
 	public void nextRound() {
-		if(this.iterRound == null) {
+		if(this.iterRound == null || this.currentRound.isEnd()) {
 			throw new RuntimeException();
 		}
 		this.currentRound = this.iterRound.next();
 	}
 	
 	public void skipRound() {
+		if(!iterRound.hasNext()) {
+			throw new RuntimeException();
+		}
+		if(iterRound.next().isEnd()) { // 데이터가 변경된 상태에서 프로그램을 종료시키는 것이 맞나?
+			throw new RuntimeException();
+		}
+		
+		this.currentRound = this.iterRound.next();
 	}
 	
 	public boolean onRound() {
@@ -53,11 +62,11 @@ public class RoundPool {
 		return true;
 	}
 	
-	public boolean isFinal() {
+	public boolean isFinal() { //구현 어렵...
 		if(!iterRound.hasNext()) {
 			return false;
 		}
-		if(iterRound.next().isEnd()) {
+		if() {
 			return true;
 		}
 		return false;
