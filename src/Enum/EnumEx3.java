@@ -36,6 +36,7 @@ enum Transportation{
 
 public class EnumEx3 {
 	public static void main(String[] args) {
+		System.out.println(Direction.EAST);
 		System.out.println("bus fare = "+Transportation.BUS.fare(100));
 		System.out.println("bus fare = "+Transportation.TRAIN.fare(100));
 		System.out.println("bus fare = "+Transportation.SHIP.fare(100));
